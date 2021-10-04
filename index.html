@@ -15,48 +15,52 @@
         <a
           href="javascript:void(0);"
           class="icon"
-          onclick="myFunction()"
+          onclick="toggleMobileMenu()"
           id="mobile-menu"
         >
           <i class="fa fa-bars"></i>
         </a>
-        <h2 class="logo">NERDFLICKS</h2>
+        <h2 class="logo">NOWPLAYING</h2>
         <nav id="links">
-          <a href="#">Início</a>
-          <a href="#">Séries</a>
-          <a href="#">Filmes</a>
-          <a href="#">Bombando</a>
+          <a href="#destaques">Destaques</a>
+          <a href="#em-alta">Em Alta</a>
+          <a href="#acao-aventura">Ação e Aventura</a>
+          <a href="#animacoes">Animações</a>
+          <a href="#terror">Terror</a>
         </nav>
       </div>
     </header>
     <main>
       <div class="filme-principal">
         <div class="container">
-          <h3 class="titulo">COLHEITA MALDITA</h3>
+          <h3 class="titulo">Fundação</h3>
           <p class="info">
-            <span class="idade">16</span> <span class="lancamento">1979</span>
+            <span class="idade">16</span> <span class="lancamento">2021</span>
           </p>
           <p class="descricao">
-            A viagem de um médico com sua mulher é interrompida quando o casal
-            encontra o corpo de um garoto na estrada. Eles tentam chamar a
-            polícia e acabam em um vilarejo onde jovens adoradores de um culto
-            macabro realizam sacrifícios humanos.
+            Inspirada nas obras de romance de Isaac Asimov, Foundation retrata a
+            épica jornada espacial de um grupo de exilados tentando salvar a
+            humanidade durante a queda do Império Galáctico.
           </p>
           <div class="botoes">
             <button role="button" class="botao botao-destaque">
               <i class="fas fa-play"></i>ASSISTIR AGORA
             </button>
-            <button role="button" class="botao botao-secundario">
+            <button
+              role="button"
+              class="botao botao-secundario"
+              onclick="toggleModalInfo()"
+            >
               <i class="fas fa-info-circle"></i>MAIS INFORMAÇÕES
             </button>
           </div>
         </div>
       </div>
     </main>
-    <div class="carrossel container">
+    <div class="carrossel container" id="destaques">
       <h4>Destaques</h4>
       <div class="owl-carousel owl-theme">
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini1.jpg"
@@ -64,7 +68,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini2.jpg"
@@ -72,7 +76,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini3.jpg"
@@ -80,7 +84,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini4.jpg"
@@ -88,7 +92,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini5.jpg"
@@ -96,7 +100,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini6.jpg"
@@ -104,7 +108,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini7.jpg"
@@ -112,7 +116,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini8.jpg"
@@ -120,7 +124,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini9.jpg"
@@ -128,7 +132,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini10.jpg"
@@ -138,10 +142,10 @@
         </div>
       </div>
     </div>
-    <div class="carrossel container">
+    <div class="carrossel container" id="em-alta">
       <h4>Em Alta</h4>
       <div class="owl-carousel owl-theme">
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini1.jpg"
@@ -149,7 +153,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini2.jpg"
@@ -157,7 +161,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini3.jpg"
@@ -165,7 +169,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini4.jpg"
@@ -173,7 +177,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini5.jpg"
@@ -181,7 +185,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini6.jpg"
@@ -189,7 +193,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini7.jpg"
@@ -197,7 +201,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini8.jpg"
@@ -205,7 +209,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini9.jpg"
@@ -213,7 +217,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini10.jpg"
@@ -223,10 +227,10 @@
         </div>
       </div>
     </div>
-    <div class="carrossel container">
+    <div class="carrossel container" id="acao-aventura">
       <h4>Ação e Aventura</h4>
       <div class="owl-carousel owl-theme">
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini1.jpg"
@@ -234,7 +238,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini2.jpg"
@@ -242,7 +246,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini3.jpg"
@@ -250,7 +254,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini4.jpg"
@@ -258,7 +262,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini5.jpg"
@@ -266,7 +270,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini6.jpg"
@@ -274,7 +278,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini7.jpg"
@@ -282,7 +286,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini8.jpg"
@@ -290,7 +294,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini9.jpg"
@@ -298,7 +302,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini10.jpg"
@@ -308,10 +312,10 @@
         </div>
       </div>
     </div>
-    <div class="carrossel container">
+    <div class="carrossel container" id="animacoes">
       <h4>Animações</h4>
       <div class="owl-carousel owl-theme">
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini1.jpg"
@@ -319,7 +323,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini2.jpg"
@@ -327,7 +331,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini3.jpg"
@@ -335,7 +339,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini4.jpg"
@@ -343,7 +347,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini5.jpg"
@@ -351,7 +355,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini6.jpg"
@@ -359,7 +363,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini7.jpg"
@@ -367,7 +371,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini8.jpg"
@@ -375,7 +379,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini9.jpg"
@@ -383,7 +387,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini10.jpg"
@@ -393,10 +397,10 @@
         </div>
       </div>
     </div>
-    <div class="carrossel container">
+    <div class="carrossel container" id="terror">
       <h4>Terror</h4>
       <div class="owl-carousel owl-theme">
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini1.jpg"
@@ -404,7 +408,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini2.jpg"
@@ -412,7 +416,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini3.jpg"
@@ -420,7 +424,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini4.jpg"
@@ -428,7 +432,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini5.jpg"
@@ -436,7 +440,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini6.jpg"
@@ -444,7 +448,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini7.jpg"
@@ -452,7 +456,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini8.jpg"
@@ -460,7 +464,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini9.jpg"
@@ -468,7 +472,7 @@
             srcset=""
           />
         </div>
-        <div class="item">
+        <div class="item" onclick="toggleModalInfo()">
           <img
             class="box-filme"
             src="resources/img/mini10.jpg"
@@ -486,47 +490,134 @@
     <script src="js/owl/owl.carousel.min.js"></script>
     <script src="js/owl/setup.js"></script>
     <script>
-      function myFunction() {
+      function toggleMobileMenu() {
         var x = document.getElementById("links");
         if (x.style.visibility === "visible") {
           x.style.visibility = "hidden";
+          x.style.opacity = 0;
         } else {
           x.style.visibility = "visible";
+          x.style.opacity = 1;
+        }
+      }
+      function toggleModalInfo() {
+        var x = document.getElementById("modal");
+        if (x.style.visibility === "visible") {
+          x.style.visibility = "hidden";
+          document.body.style.overflow = "auto";
+          x.style.opacity = 0;
+        } else {
+          x.style.visibility = "visible";
+          document.body.style.overflow = "hidden";
+          x.style.opacity = 1;
         }
       }
     </script>
     <footer>
       <div class="container">
         <div class="social-links">
-          <a href="" target="_blank" class="social-link-linkedin">
+          <a
+            href="https://www.linkedin.com/in/salustiano-muniz/"
+            target="_blank"
+            class="social-link-linkedin"
+          >
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="" target="_blank" class="social-link-twitter"
+          <a
+            href="https://twitter.com/stsmuniz"
+            target="_blank"
+            class="social-link-twitter"
             ><i class="fab fa-twitter"></i
           ></a>
-          <a href="" target="_blank" class="social-link-dev"
+          <a
+            href="https://github.com/stsmuniz"
+            target="_blank"
+            class="social-link-dev"
             ><i class="fab fa-dev"></i
+          ></a>
+          <a
+            href="https://dev.to/stsmuniz"
+            target="_blank"
+            class="social-link-dev"
+            ><i class="fab fa-github"></i
           ></a>
         </div>
         <div class="institucional">
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
-          <a href="" class="footer-link"></a>
+          <a href="#" class="footer-link">Termos de uso</a>
+          <a href="#" class="footer-link">Declaração de Privacidade</a>
+          <a href="#" class="footer-link">Ajuda</a>
+          <a href="#" class="footer-link">Sobre</a>
         </div>
         <div class="copy">
           <p>&copy; 2021 - Salustiano Muniz</p>
         </div>
       </div>
     </footer>
+    <div id="modal" class="modal-overlay">
+      <div class="modal">
+        <button class="close" onclick="toggleModalInfo()">
+          <i class="far fa-times-circle"></i>
+        </button>
+        <div class="hero">
+          <div class="container">
+            <h2 class="titulo">Fundação</h2>
+            <div class="botoes">
+              <button class="assistir">
+                <i class="fas fa-play"></i>Assistir
+              </button>
+              <button class="like"><i class="fas fa-thumbs-up"></i></button>
+              <button class="dislike">
+                <i class="far fa-thumbs-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="modal-info">
+            <div class="info-texto">
+              <div class="modal-info-filme">
+                <span class="ano">2021</span>
+                <span class="classificacao-idade idade-16">16</span>
+              </div>
+              <div class="sinopse">
+                Inspirada nas obras de romance de Isaac Asimov, Foundation
+                retrata a épica jornada espacial de um grupo de exilados
+                tentando salvar a humanidade durante a queda do Império
+                Galáctico.
+              </div>
+            </div>
+            <div class="info-elenco-genero">
+              <p class="elenco-container">
+                <span class="info-label">Elenco: </span>
+                <a href="#" class="info-item">Jared Harris</a>,
+                <a href="#" class="info-item">Lou Liobell</a>,
+                <a href="#" class="info-item">Lee Pace</a>,
+                <a href="#" class="info-item">Leah Haarvey</a>
+              </p>
+              <p class="genero-container">
+                <span class="info-label">Gênero: </span>
+                <a href="#" class="info-item">Sci-Fi</a>,
+                <a href="#" class="info-item">Fantasia</a>,
+                <a href="#" class="info-item">Drama</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="trailer">
+            <h3>Trailer</h3>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/pzIccmKU3BE"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

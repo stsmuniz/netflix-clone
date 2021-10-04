@@ -2,6 +2,7 @@
   --vermelho: #e50915;
   --preto: #141414;
   --preto-transparente: rgba(0, 0, 0, 0.5);
+  --cinza: #777;
   --branco: #aaa;
   --branco-transparente: rgba(170, 170, 170, 0.5);
   --branco-secondary: #fff;
@@ -24,11 +25,20 @@ body {
   color: var(--branco);
 }
 
+a {
+  color: var(--branco);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--branco-secondary);
+}
+
 .container {
-  width: 88%;
+  width: 80%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  margin-left: 15%;
+  margin-left: 10%;
 }
 
 header #mobile-menu {
@@ -60,6 +70,8 @@ header .logo {
 
 header nav {
   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.1s linear, opacity 0.1s linear;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -67,7 +79,6 @@ header nav {
   left: 0;
   background-color: rgba(0, 0, 0, 0.95);
   width: 100%;
-  transition: visibility 0s, opacity 0.5s linear;
   z-index: 1000;
 }
 
@@ -78,13 +89,11 @@ header nav a {
 /* filme principal */
 .filme-principal {
   font-size: 16px;
-  /* background: linear-gradient(180deg, var(--transparente) 0%, var(--preto) 92%),
-    url("/resources/img/colheita_maldita_cover.jpg"); */
   background: linear-gradient(
       var(--preto-transparente) 0%,
       var(--preto-transparente) 100%
     ),
-    url("/resources/img/colheita_maldita_cover.jpg");
+    url("/resources/img/fundacao_cover.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -96,6 +105,7 @@ header nav a {
 .filme-principal .descricao {
   margin-top: 10px;
   margin-bottom: 40px;
+  visibility: hidden;
   display: none;
 }
 
@@ -108,6 +118,16 @@ header nav a {
 
 .filme-principal .info {
   margin: 0.5rem 0;
+}
+
+.classificacao-idade {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.idade-16 {
+  background-color: var(--vermelho);
 }
 
 .filme-principal .info .idade {
@@ -142,18 +162,14 @@ header nav a {
 }
 
 .botao:hover {
-  background-color: var(--branco);
+  background-color: var(--branco-secondary);
   color: var(--preto);
 }
 
 .botao i {
   margin-right: 8px;
+  visibility: hidden;
   display: none;
-}
-
-.container {
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .box-filme {
@@ -175,70 +191,322 @@ header nav a {
   margin-bottom: 0.25rem;
 }
 
-.carrossel-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow: hidden;
-}
-
-.carrossel-wrapper .carrossel-item {
-  margin-right: 0.5rem;
-}
-
-.carrossel-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.modal-overlay {
   position: fixed;
-  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background-color: var(--preto-transparente);
+  z-index: 1001;
+  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
 }
 
-.carrossel-nav button {
+.modal-overlay .modal {
+  background-color: var(--preto);
+  position: relative;
+  margin: 10% auto;
+  width: 90%;
+  padding-bottom: 4rem;
+  border-radius: 0.5rem;
+}
+
+.modal button {
   background: transparent;
   border: 0;
-  color: var(--branco);
-  font-size: 3rem;
-  position: relative;
-  height: 100%;
 }
 
-.carrossel-nav button:hover {
-  color: var(--branco-secondary);
+.modal button:hover {
   cursor: pointer;
 }
 
-.carrossel-nav .carrossel-nav-left {
-  background: linear-gradient(
-    270deg,
-    var(--transparente) 0%,
-    var(--preto-transparente) 90%
-  );
+.modal .close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: var(--branco);
+  font-size: 2rem;
 }
 
-.carrossel-nav .carrossel-nav-right {
-  background: linear-gradient(
-    90deg,
-    var(--transparente) 0%,
-    var(--preto-transparente) 90%
-  );
+.modal .close:hover {
+  color: var(--branco-secondary);
+}
+
+.modal .hero {
+  background: linear-gradient(180deg, var(--transparente) 0%, var(--preto) 90%),
+    url("/resources/img/fundacao_cover.jpg");
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
+}
+
+.modal .botoes {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.modal .hero .titulo {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--branco-secondary);
+}
+
+.modal .botoes button {
+  margin-right: 1rem;
+  font-size: 1rem;
+  color: var(--branco);
+  border: 1px solid var(--branco);
+  border-radius: 3rem;
+  padding: 0.5rem;
+  transition: 0.2s ease all;
+}
+
+.modal .botoes button.assistir {
+  background-color: var(--branco-secondary);
+  border-radius: 0.2rem;
+  color: var(--preto);
+}
+
+.modal .botoes button.assistir:hover {
+  background-color: var(--branco);
+}
+
+.modal .botoes button.assistir i {
+  margin-right: 1rem;
+}
+
+.modal .botoes button:hover {
+  background-color: var(--branco-secondary);
+  color: var(--preto);
+}
+
+.modal .modal-info {
+  display: flex;
+}
+
+.modal .modal-info .info-texto {
+  margin-right: 1rem;
+  color: var(--branco-secondary);
+  font-size: 16px;
+  line-height: 1.4rem;
+  width: 80%;
+}
+
+.modal .modal-info .info-texto .modal-info-filme {
+  margin-bottom: 1.5rem;
+}
+
+.modal .modal-info .info-label {
+  color: var(--cinza);
+}
+
+.modal-info .info-elenco-genero {
+  width: 60%;
+  line-height: 1.2rem;
+}
+
+.modal-info .info-elenco-genero p {
+  margin-bottom: 1.5rem;
+  color: var(--branco-secondary);
+}
+
+.modal-info .info-elenco-genero a {
+  color: var(--branco-secondary);
+}
+
+.modal-info .info-elenco-genero a:hover {
+  color: var(--branco);
+}
+
+.modal .trailer {
+  height: 200px;
+}
+
+.modal .trailer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* footer */
 
+footer .container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 footer .social-links {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 footer .social-links a {
   font-size: 2rem;
   text-decoration: none;
   color: var(--branco);
-  margin-right: 0.25rem;
+  margin-right: 1rem;
 }
 
 footer .social-links a:hover {
   color: var(--branco-secondary);
+}
+
+footer .institucional {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .institucional a {
+  margin-bottom: 0.5rem;
+}
+
+footer .copy {
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    width: 90%;
+    margin-left: 5%;
+  }
+  #mobile-menu {
+    display: none;
+  }
+  header .logo {
+    margin-left: 0;
+  }
+  header nav {
+    visibility: visible;
+    display: flex;
+    flex-direction: row;
+    position: static;
+    top: initial;
+    left: initial;
+    background-color: transparent;
+    width: initial;
+    z-index: 1000;
+    margin-left: 2rem;
+    opacity: 1;
+  }
+  .filme-principal {
+    height: 35rem;
+    background: linear-gradient(
+        180deg,
+        var(--transparente) 0%,
+        var(--preto) 92%
+      ),
+      url("/resources/img/fundacao_cover.jpg");
+    margin-bottom: -6rem;
+    font-size: 22px;
+  }
+  .filme-principal .container {
+    width: 50%;
+  }
+  .filme-principal .titulo {
+    font-size: 3rem;
+  }
+  .filme-principal .botoes {
+    justify-content: start;
+  }
+  .filme-principal .botao {
+    margin-right: 1rem;
+    padding: 1rem 2rem;
+    font-size: 18px;
+  }
+  .filme-principal .descricao {
+    visibility: visible;
+    display: block;
+  }
+  .filme-principal .botao i {
+    visibility: visible;
+    display: inline-block;
+  }
+  .owl-carousel {
+    position: relative;
+  }
+  .carrossel h4 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .carrossel.container .owl-nav {
+    display: flex;
+    font-size: 6rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    margin-top: 0;
+    pointer-events: none;
+  }
+  /* .carrossel.container .owl-nav:hover {
+    visibility: visible;
+  } */
+  .carrossel.container .owl-nav button {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    pointer-events: auto;
+  }
+  .carrossel.container .owl-nav button span {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  .carrossel.container .owl-nav button.owl-prev {
+    background: linear-gradient(
+      -90deg,
+      var(--transparente) 0%,
+      var(--preto-transparente) 70%
+    );
+  }
+  .carrossel.container .owl-nav button.owl-next {
+    background: linear-gradient(
+      90deg,
+      var(--transparente) 0%,
+      var(--preto-transparente) 70%
+    );
+    padding-right: 1.5rem;
+  }
+
+  footer .container {
+    margin-left: 20%;
+    width: 60%;
+  }
+
+  footer .institucional {
+    flex-direction: row;
+  }
+
+  footer .institucional a {
+    margin-right: 2rem;
+  }
+
+  .modal-overlay .modal {
+    width: 70%;
+    margin: 5% auto;
+  }
+
+  .modal-overlay .modal .hero {
+    height: 500px;
+  }
+
+  .modal-overlay .modal .trailer {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  main {
+    height: 700px;
+  }
+  .filme-principal {
+    height: 100%;
+  }
+  .modal-overlay .modal {
+    width: 50%;
+  }
 }

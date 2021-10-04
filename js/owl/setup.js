@@ -15,5 +15,9 @@ $(".owl-carousel").owlCarousel({
       items: 5,
       nav: true,
     },
+    1400: {
+      items: 6,
+      nav: true,
+    },
   },
 });
