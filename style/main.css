@@ -1,0 +1,244 @@
+:root {
+  --vermelho: #e50915;
+  --preto: #141414;
+  --preto-transparente: rgba(0, 0, 0, 0.5);
+  --branco: #aaa;
+  --branco-transparente: rgba(170, 170, 170, 0.5);
+  --branco-secondary: #fff;
+  --transparente: rgba(0, 0, 0, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--preto);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--branco);
+}
+
+.container {
+  width: 88%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 15%;
+}
+
+header #mobile-menu {
+  font-size: 1.25rem;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--branco);
+}
+
+header a:hover {
+  color: var(--branco-secondary);
+  transition: 0.3s ease all;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+header .logo {
+  color: var(--vermelho);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-left: 1rem;
+}
+
+header nav {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 39px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100%;
+  transition: visibility 0s, opacity 0.5s linear;
+  z-index: 1000;
+}
+
+header nav a {
+  margin: 0.5rem;
+}
+
+/* filme principal */
+.filme-principal {
+  font-size: 16px;
+  /* background: linear-gradient(180deg, var(--transparente) 0%, var(--preto) 92%),
+    url("/resources/img/colheita_maldita_cover.jpg"); */
+  background: linear-gradient(
+      var(--preto-transparente) 0%,
+      var(--preto-transparente) 100%
+    ),
+    url("/resources/img/colheita_maldita_cover.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5rem 0 1rem;
+}
+
+.filme-principal .descricao {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  display: none;
+}
+
+.filme-principal .titulo {
+  font-size: 1.5rem;
+  color: var(--branco-secondary);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.filme-principal .info {
+  margin: 0.5rem 0;
+}
+
+.filme-principal .info .idade {
+  font-weight: bold;
+  border: 1px solid var(--branco);
+  padding: 0.1rem;
+  background-color: var(--preto-transparente);
+}
+
+.botoes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.botao {
+  background-color: var(--preto-transparente);
+  border: none;
+  color: var(--branco-secondary);
+  padding: 0.5rem;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.botao-destaque {
+  background-color: var(--vermelho);
+}
+
+.botao-secundario {
+  border: 1px solid var(--branco-secondary);
+}
+
+.botao:hover {
+  background-color: var(--branco);
+  color: var(--preto);
+}
+
+.botao i {
+  margin-right: 8px;
+  display: none;
+}
+
+.container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.box-filme {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.carrossel.container {
+  margin-bottom: 1rem;
+}
+
+.carrossel-filmes {
+  position: relative;
+}
+
+.carrossel h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.carrossel-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.carrossel-wrapper .carrossel-item {
+  margin-right: 0.5rem;
+}
+
+.carrossel-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.carrossel-nav button {
+  background: transparent;
+  border: 0;
+  color: var(--branco);
+  font-size: 3rem;
+  position: relative;
+  height: 100%;
+}
+
+.carrossel-nav button:hover {
+  color: var(--branco-secondary);
+  cursor: pointer;
+}
+
+.carrossel-nav .carrossel-nav-left {
+  background: linear-gradient(
+    270deg,
+    var(--transparente) 0%,
+    var(--preto-transparente) 90%
+  );
+}
+
+.carrossel-nav .carrossel-nav-right {
+  background: linear-gradient(
+    90deg,
+    var(--transparente) 0%,
+    var(--preto-transparente) 90%
+  );
+}
+
+/* footer */
+
+footer .social-links {
+  margin-bottom: 0.5rem;
+}
+
+footer .social-links a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--branco);
+  margin-right: 0.25rem;
+}
+
+footer .social-links a:hover {
+  color: var(--branco-secondary);
+}
