@@ -19,3 +19,7 @@ Os seguintes elementos foram acrescentados ao projeto:
 ## O aprendizado
 
 Usei várias vezes propriedades flexbox e animações, algo que não tenho o costume de usar porque ainda não tinha estudado a fundo. Também foi um dos poucos projetos que fiz sem o uso de um framework front end ou sem usar jQuery (pra além do plugin de slideshow recomendado nas aulas), o que foi um desafio interessante e que acho que foi bom pro processo de aprendizado.
+
+## O resultado
+
+Quem quiser conferir pode acessar [este link](https://priceless-engelbart-8e38cd.netlify.app/) para ver o projeto no ar.
