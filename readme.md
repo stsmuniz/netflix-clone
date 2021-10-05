@@ -22,4 +22,4 @@ Usei várias vezes propriedades flexbox e animações, algo que não tenho o cos
 
 ## O resultado
 
-Quem quiser conferir pode acessar [este link](https://priceless-engelbart-8e38cd.netlify.app/) para ver o projeto no ar.
+Quem quiser conferir pode acessar [este link](https://stsmuniz.github.io/netflix-clone/) para ver o projeto no ar.
