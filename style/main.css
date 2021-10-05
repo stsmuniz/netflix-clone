@@ -399,7 +399,7 @@ footer .copy {
         var(--transparente) 0%,
         var(--preto) 92%
       ),
-      url("/resources/img/fundacao_cover.jpg");
+      url("../resources/img/fundacao_cover.jpg");
     margin-bottom: -6rem;
     font-size: 22px;
   }
