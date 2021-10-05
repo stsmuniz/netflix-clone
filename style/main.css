@@ -93,7 +93,7 @@ header nav a {
       var(--preto-transparente) 0%,
       var(--preto-transparente) 100%
     ),
-    url("/resources/img/fundacao_cover.jpg");
+    url("../resources/img/fundacao_cover.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -237,7 +237,7 @@ header nav a {
 
 .modal .hero {
   background: linear-gradient(180deg, var(--transparente) 0%, var(--preto) 90%),
-    url("/resources/img/fundacao_cover.jpg");
+    url("../resources/img/fundacao_cover.jpg");
   background-size: cover;
   height: 300px;
   display: flex;
